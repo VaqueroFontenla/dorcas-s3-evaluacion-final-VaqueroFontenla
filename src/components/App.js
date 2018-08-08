@@ -40,7 +40,9 @@ class App extends Component {
         id : i
       }
     }
-    console.log(pottersConId)
+    this.setState({
+      potters: pottersConId
+    });
   }
 
   filterPotterByName(e) {
@@ -61,6 +63,8 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.state.potters)
+
     const {filterPotterByName}=this;
     return (
       <div className="App">
