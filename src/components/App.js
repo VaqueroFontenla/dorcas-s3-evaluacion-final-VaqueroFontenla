@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import HarryList from './HarryList';
+import HarryFilter from './HarryFilter';
 import './App.css';
 
 
@@ -9,8 +10,12 @@ class App extends Component {
   constructor (props) {
     super(props);
     this.state = {
-      potters: []
+      potters: [],
+      name: '',
+      filterpotters:[],
     }
+
+    this.filterPotterByName=this.filterPotterByName.bind(this);
 
   }
 
@@ -27,15 +32,31 @@ class App extends Component {
       });
   }
 
+  filterPotterByName(e) {
+    console.log(e.target.value)
+    const  {potters, name}=this.state;
+    this.setState(
+      {
+        name: e.target.value,
+      //potters: nameFilter
+    })
+    const nameFilter = potters.filter(item => item.name.includes(name));
+    this.setState(
+      {
+      potters: nameFilter
+  })
+    console.log(nameFilter);
+  }
+
   render() {
+    const {filterPotterByName}=this;
     return (
       <div className="App">
         <h1 className="title">
         Harry Potter Characters
         </h1>
-        <div className="search">
-          <input type="text"/>
-        </div>
+        <HarryFilter filterPotterByName={filterPotterByName}
+                      name={this.state.name}/>
         <div className="HarryList">
           <HarryList pottersCharacter={this.state.potters}/>
         </div>

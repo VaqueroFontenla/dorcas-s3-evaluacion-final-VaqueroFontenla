@@ -12,16 +12,15 @@ class HarryList extends Component {
 
   render () {
 
-    const pottersCharacter= this.props.pottersCharacter;
-    console.log(pottersCharacter.name);
+    const {pottersCharacter}= this.props;
     return (
       <ul className="potterList">
         {
           pottersCharacter.map((potterCharacter, index) =>
-            <HarryCard potterName={potterCharacter.name}
-                       potterHouse= {potterCharacter.house}
-                       potterImage={potterCharacter.image}
-                     />
+            <HarryCard key={index} potterName={potterCharacter.name}
+                                  potterHouse={potterCharacter.house}
+                                  potterImage={potterCharacter.image}
+                                />
           )
         }
 
