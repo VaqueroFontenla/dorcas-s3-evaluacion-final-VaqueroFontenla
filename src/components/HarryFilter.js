@@ -11,7 +11,6 @@ class HarryFilter extends Component {
   }
 
   render () {
-    console.log(this.props.name)
     const {filterPotterByName}=this.props;
 
     return (

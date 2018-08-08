@@ -20,6 +20,7 @@ class HarryList extends Component {
             <HarryCard key={index} potterName={potterCharacter.name}
                                   potterHouse={potterCharacter.house}
                                   potterImage={potterCharacter.image}
+
                                 />
           )
         }

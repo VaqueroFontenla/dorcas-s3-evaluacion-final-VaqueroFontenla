@@ -33,19 +33,20 @@ class App extends Component {
   }
 
   filterPotterByName(e) {
-    console.log(e.target.value)
-    const  {potters, name}=this.state;
     this.setState(
       {
-        name: e.target.value,
+        name: e.target.value
       //potters: nameFilter
+    }, ()=> {
+      const potters= [...this.state.potters]
+      const potterFilter= this.state.potters.filter(item => item.name.includes(this.state.name));
+      this.setState(
+        {
+          potters: potterFilter
+        }
+      )
+        console.log(this.state.potters);
     })
-    const nameFilter = potters.filter(item => item.name.includes(name));
-    this.setState(
-      {
-      potters: nameFilter
-  })
-    console.log(nameFilter);
   }
 
   render() {
@@ -58,7 +59,8 @@ class App extends Component {
         <HarryFilter filterPotterByName={filterPotterByName}
                       name={this.state.name}/>
         <div className="HarryList">
-          <HarryList pottersCharacter={this.state.potters}/>
+          <HarryList pottersCharacter={this.state.potters}
+                     />
         </div>
       </div>
     );

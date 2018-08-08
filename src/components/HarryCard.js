@@ -10,6 +10,7 @@ class HarryCard extends Component {
 
   render () {
     return (
+      
       <ul className="potterCard">
         <li><img src={this.props.potterImage} alt="character image"/></li>
         <li>{this.props.potterName}</li>
