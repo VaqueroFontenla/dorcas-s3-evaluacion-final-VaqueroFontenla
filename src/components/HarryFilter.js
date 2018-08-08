@@ -5,12 +5,11 @@ import './HarryFilter.css';
 class HarryFilter extends Component {
   constructor (props) {
     super (props)
-    // this.state = {
-    //   name: ''
-    // }
+
   }
 
   render () {
+
     const {filterPotterByName}=this.props;
 
     return (

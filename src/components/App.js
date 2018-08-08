@@ -16,7 +16,6 @@ class App extends Component {
     }
 
     this.filterPotterByName=this.filterPotterByName.bind(this);
-
   }
 
 
@@ -28,8 +27,20 @@ class App extends Component {
       .then((json) => {
         this.setState({
           potters: json
-        });
+        }, this.addId);
       });
+  }
+
+  addId() {
+    const potters= [...this.state.potters]
+    let pottersConId = [];
+    for (let i = 0; i<potters.length; i++) {
+      pottersConId[i] = {
+        ...potters[i],
+        id : i
+      }
+    }
+    console.log(pottersConId)
   }
 
   filterPotterByName(e) {
@@ -39,10 +50,10 @@ class App extends Component {
       //potters: nameFilter
     }, ()=> {
       const potters= [...this.state.potters]
-      const potterFilter= this.state.potters.filter(item => item.name.includes(this.state.name));
+      const potterFilter= potters.filter(item => item.name.includes(this.state.name));
       this.setState(
         {
-          potters: potterFilter
+          filterpotters: potterFilter
         }
       )
         console.log(this.state.potters);
@@ -60,6 +71,7 @@ class App extends Component {
                       name={this.state.name}/>
         <div className="HarryList">
           <HarryList pottersCharacter={this.state.potters}
+                     pottersFilterCharacter={this.state.filterpotters}
                      />
         </div>
       </div>

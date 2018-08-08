@@ -11,16 +11,24 @@ class HarryList extends Component {
   }
 
   render () {
+    console.log(this.props);
 
-    const {pottersCharacter}= this.props;
+    const {pottersFilterCharacter,pottersCharacter}=this.props
+    let filterOrNot;
+
+    if (pottersFilterCharacter.length === 0) {
+      filterOrNot = pottersCharacter;
+    } else {
+      filterOrNot = pottersFilterCharacter;
+    }
+
     return (
       <ul className="potterList">
         {
-          pottersCharacter.map((potterCharacter, index) =>
-            <HarryCard key={index} potterName={potterCharacter.name}
-                                  potterHouse={potterCharacter.house}
-                                  potterImage={potterCharacter.image}
-
+          filterOrNot.map((filterOrNot, index) =>
+            <HarryCard key={index} potterName={filterOrNot.name}
+                                  potterHouse={filterOrNot.house}
+                                  potterImage={filterOrNot.image}
                                 />
           )
         }
