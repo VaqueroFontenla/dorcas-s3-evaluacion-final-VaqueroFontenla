@@ -12,34 +12,30 @@ class HarryDetail extends Component {
 
 
   render () {
-   const { match,
-     potters
-   } = this.props;
-   console.log(this.props);
+    const { match,
+      potters
+    } = this.props;
+    console.log(this.props);
 
-   const idPotters = parseInt(match.params.id);
-   const potterino = potters.filter(potter => {
+    const idPotters = parseInt(match.params.id);
+    const potterino = potters.filter(potter => {
       return potter.id === idPotters;
     });
 
     //let potterToShow = potterino[0];
     console.log(potterino)
 
-
-
-  return (
-    <div>
-    <Link to="/" className="back-btn">Volver :)</Link>
-    <ul> {
-      potterino.map((potterinoino,index)=>
-      <li>{potterinoino.name}</li>
-      )
-    }
-
+    return (
+      <div>
+        <Link to="/" className="back-btn">Volver :)</Link>
+        <ul> {
+          potterino.map((potterinoino,index)=>
+          <Card potterinoino={potterinoino}/>
+        )
+      }
     </ul>
-
-    </div>
-  );
+  </div>
+);
 }
 }
 
