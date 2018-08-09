@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link, Route, Switch } from 'react-router-dom';
 import '../stylesheets/App.css';
+import '../stylesheets/Fonts.css';
 import Homepage from './Homepage';
 import HarryFilter from './HarryFilter';
 import HarryDetail from './HarryDetail';

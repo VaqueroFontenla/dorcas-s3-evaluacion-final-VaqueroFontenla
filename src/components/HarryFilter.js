@@ -14,7 +14,8 @@ class HarryFilter extends Component {
 
     return (
       <div className="search">
-        <input type="text" name="" value={this.props.name} onChange={filterPotterByName}/>
+        {/* <label fhtmlFor="inputPotters">Search your "Potter"</label> */}
+        <input className="search-input" type="text" name="inputPotters" value={this.props.name} onChange={filterPotterByName}/>
       </div>
     )
   }

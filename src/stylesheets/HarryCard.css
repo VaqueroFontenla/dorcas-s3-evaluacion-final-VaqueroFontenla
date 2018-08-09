@@ -1,0 +1,42 @@
+.potterCard {
+  background-color: #ff7854;
+  padding: 0;
+  list-style: none;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  width: 200px;
+  height: 380px;
+}
+.potterCard-img {
+  width: 200px;
+  height: 270px;
+  background-position: top left 50%;
+  background-size: cover;
+}
+
+.img {
+  width: 0;
+  height: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.potterCard-name {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  color: white;
+  font-weight: bold;
+  margin-top: 15px;
+  font-size: 20px;
+}
+
+.potterCard-house {
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  font-weight: 400;
+  margin-top: 50px;
+}
