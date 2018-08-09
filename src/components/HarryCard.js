@@ -13,12 +13,10 @@ class HarryCard extends Component {
 
     return (
       <Link to={'potterCharacter/'+this.props.potterId}>
-
       <ul className="potterCard">
         <li><img src={this.props.potterImage} alt="character image"/></li>
         <li>{this.props.potterName}</li>
         <li>{this.props.potterHouse}</li>
-
       </ul>
     </Link>
     )

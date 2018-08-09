@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link, Route, Switch } from 'react-router-dom';
 import Homepage from './Homepage';
 import HarryFilter from './HarryFilter';
-import CharacterDetail from './CharacterDetail';
+import HarryDetail from './HarryDetail';
 
 
 const url = 'http://hp-api.herokuapp.com/api/characters';
@@ -12,6 +12,7 @@ class App extends Component {
     super(props);
     this.state = {
       potters: [],
+      pottersWithoutId: [],
       name: '',
       filterpotters:[],
     }
@@ -27,24 +28,23 @@ class App extends Component {
     })
     .then((json) => {
       this.setState({
-        potters: json
+        pottersWithoutId: json
       }, this.addId);
 
     });
   }
 
   addId() {
-    const potters= [...this.state.potters]
-    console.log(potters);
-    let pottersConId = [];
-    for (let i = 0; i<potters.length; i++) {
-      pottersConId[i] = {
-        ...potters[i],
+    const pottersWithoutId= [...this.state.pottersWithoutId]
+    let potters = [];
+    for (let i = 0; i<pottersWithoutId.length; i++) {
+      potters[i] = {
+        ...pottersWithoutId[i],
         id : i
       }
     }
     this.setState({
-      potters: pottersConId
+      potters: potters
     });
   }
 
@@ -61,13 +61,11 @@ class App extends Component {
             filterpotters: potterFilter
           }
         )
-        console.log(this.state.potters);
       })
     }
 
-    render() {
-      console.log(this.state.potters)
 
+    render() {
       const {name, potters, filterpotters}=this.state;
       return (
         <div className="App">
@@ -84,14 +82,13 @@ class App extends Component {
             }
           />
           <Route path='/potterCharacter/:id' render={
-            (props) => <CharacterDetail
+            (props) => <HarryDetail
               match={props.match}
-              pottersCharacter={this.state.potters}
+              potters={this.state.potters}
             />
           }
         />
       </Switch>
-
     </div>
   );
 }
