@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { Link, Route, Switch } from 'react-router-dom';
-import HarryList from './HarryList';
+import Homepage from './Homepage';
 import HarryFilter from './HarryFilter';
-import '../stylesheets/App.css';
 
 
 const url = 'http://hp-api.herokuapp.com/api/characters';
@@ -29,11 +28,13 @@ class App extends Component {
         this.setState({
           potters: json
         }, this.addId);
+
       });
   }
 
   addId() {
     const potters= [...this.state.potters]
+    console.log(potters);
     let pottersConId = [];
     for (let i = 0; i<potters.length; i++) {
       pottersConId[i] = {
@@ -66,18 +67,18 @@ class App extends Component {
   render() {
     console.log(this.state.potters)
 
-    const {filterPotterByName}=this;
+    const {name, potters, filterpotters}=this.state;
     return (
       <div className="App">
         <h1 className="title">
         Harry Potter Characters
         </h1>
-        <Homepage filterPotterByName={filterPotterByName}
-                  name={this.state.name}
-                  pottersCharacter={this.state.potters}
-                  pottersFilterCharacter={this.state.filterpotters}
+        <Homepage filterPotterByName={this.filterPotterByName}
+                  name={name}
+                  pottersCharacter={potters}
+                  pottersFilterCharacter={filterpotters}
                 />
-        
+
       </div>
     );
   }
