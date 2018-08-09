@@ -8,13 +8,13 @@ filtrar por el nombre del personaje. Vamos a usar React para realizarlo.
 Puedes espiarme en:
 
 <a href="https://www.linkedin.com/in/loretovaquerofontenla/">
-  <img src="images/linkedin.svg" alt="linkedin">
+  <img src="src/img/linkedin.svg" alt="linkedin">
 </a>
 <a href="https://twitter.com/">
-  <img src="images/twitter.svg" alt="twitter">
+  <img src="src/img/twitter.svg" alt="twitter">
 </a>
 <a href="https://github.com/VaqueroFontenla">
-  <img src="images/github.svg" alt="github">
+  <img src="src/img/github.svg" alt="github">
 </a>
 
 ## Prerequisitos
