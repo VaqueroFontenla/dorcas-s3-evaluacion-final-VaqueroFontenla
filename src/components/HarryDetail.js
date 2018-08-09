@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
+import PropTypes from 'prop-types';
 import Card from './Card';
 import '../stylesheets/HarryDetail.css';
 
@@ -38,5 +39,10 @@ class HarryDetail extends Component {
 );
 }
 }
+
+HarryDetail.propTypes = {
+    potters: PropTypes.array,
+    matchs: PropTypes.object.isRequired,
+};
 
 export default HarryDetail;

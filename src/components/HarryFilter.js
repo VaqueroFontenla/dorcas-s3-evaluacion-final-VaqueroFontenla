@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import '../stylesheets/HarryFilter.css';
 
 
@@ -20,5 +21,10 @@ class HarryFilter extends Component {
     )
   }
 }
+
+HarryFilter.propTypes = {
+    name: PropTypes.string,
+    filterPotterByName: PropTypes.func.isRequired,
+};
 
 export default HarryFilter;

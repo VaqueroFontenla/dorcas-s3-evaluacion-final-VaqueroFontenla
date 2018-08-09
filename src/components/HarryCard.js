@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import '../stylesheets/Fonts.css';
 import '../stylesheets/HarryCard.css';
 
@@ -23,5 +24,11 @@ class HarryCard extends Component {
     )
   }
 }
+
+HarryCard.propTypes = {
+    photo: PropTypes.string,
+    name: PropTypes.string,
+    house: PropTypes.string
+};
 
 export default HarryCard;

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import '../stylesheets/Card.css';
 
 
@@ -29,5 +30,15 @@ class Card extends Component {
     )
   }
 }
+
+
+Card.propTypes = {
+  image: PropTypes.string,
+  name: PropTypes.string,
+  house: PropTypes.string,
+  patronus: PropTypes.string,
+  dateOfBirth: PropTypes.string,
+  alive: PropTypes.bool,
+};
 
 export default Card;

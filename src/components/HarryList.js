@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import HarryCard from './HarryCard';
+import PropTypes from 'prop-types';
 import '../stylesheets/HarryList.css';
 
 
@@ -39,5 +40,10 @@ class HarryList extends Component {
     );
   }
 }
+
+HarryList.propTypes = {
+    pottersCharacter: PropTypes.array,
+    pottersFilterCharacter: PropTypes.array,
+};
 
 export default HarryList;
