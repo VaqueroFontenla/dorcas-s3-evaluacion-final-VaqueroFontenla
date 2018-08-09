@@ -7,7 +7,7 @@ import HarryFilter from './HarryFilter';
 import HarryDetail from './HarryDetail';
 
 
-const url = 'http://hp-api.herokuapp.com/api/characters';
+const url = 'https://hp-api.herokuapp.com/api/characters';
 
 class App extends Component {
   constructor (props) {

@@ -34,7 +34,7 @@ Este es el aspecto de la aplicación:
 ### Listado de personajes
 
 En primer lugar, vamos a realizar una web con el listado de personajes de Harry Potter. Para eso, vamos a
-utilizar el servicio de http://hp-api.herokuapp.com/ que nos devuelve información sobre 25 personajes de la
+utilizar el servicio de https://hp-api.herokuapp.com/ que nos devuelve información sobre 25 personajes de la
 saga. Sobre cada uno, vamos a pintar al menos:
 - nombre
 - foto
