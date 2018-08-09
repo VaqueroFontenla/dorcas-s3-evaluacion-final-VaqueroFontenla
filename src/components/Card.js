@@ -9,18 +9,21 @@ class Card extends Component {
 
 
   render () {
-  const { name,house,image,alive,dateOfBirth,patronus } = this.props.potterinoino;
+    const { name,house,image,alive,dateOfBirth,patronus } = this.props.potterinoino;
 
-  console.log(name);
+    console.log(name);
     return (
       <ul className="potterCard">
-        <li><img src={image} alt="character image"/></li>
-        <li>{name}</li>
-        <li>{house}</li>
-        <li>{alive?'Vivo':'Muerto'}</li>
-        <li>{patronus}</li>
-        <li>{dateOfBirth}</li>
-
+        <li className="potterCard-img" style={{backgroundImage: "url(" + image + ")"}}><img className="img" src={image} alt="character image"/></li>
+        <li className="potterCard-data">
+          <div className="potterCard-name">{name}</div>
+          <div className="potterCard-data-data">
+          <div>Casa:  {house}</div>
+          <div>Nacimiento:  {dateOfBirth}</div>
+          <div>Patronus:  {patronus}</div>
+          <div>Estado:  {alive?'ViVO':'MUERTO'}</div>
+          </div>
+        </li>
       </ul>
 
     )

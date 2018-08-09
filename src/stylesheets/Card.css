@@ -1,0 +1,35 @@
+.potterCard {
+  height: 295px;
+  width: 600px;
+  display: flex;
+  flex-direction: row;
+
+}
+
+
+.potterCard-img {
+  height: 295px;
+  width: 200px;
+}
+
+.img {
+  width: 0;
+  height: 0;
+}
+
+.potterCard-data {
+  height: auto;
+  width: auto;
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.potterCard-data-name {
+
+}
+
+.potterCard-data-data {
+
+}
