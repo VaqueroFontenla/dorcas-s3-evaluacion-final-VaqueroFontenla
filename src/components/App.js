@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link, Route, Switch } from 'react-router-dom';
 import Homepage from './Homepage';
 import HarryFilter from './HarryFilter';
+import CharacterDetail from './CharacterDetail';
 
 
 const url = 'http://hp-api.herokuapp.com/api/characters';
@@ -21,15 +22,15 @@ class App extends Component {
 
   componentDidMount() {
     fetch(url)
-      .then(response => {
-        return response.json();
-      })
-      .then((json) => {
-        this.setState({
-          potters: json
-        }, this.addId);
+    .then(response => {
+      return response.json();
+    })
+    .then((json) => {
+      this.setState({
+        potters: json
+      }, this.addId);
 
-      });
+    });
   }
 
   addId() {
@@ -51,37 +52,49 @@ class App extends Component {
     this.setState(
       {
         name: e.target.value
-      //potters: nameFilter
-    }, ()=> {
-      const potters= [...this.state.potters]
-      const potterFilter= potters.filter(item => item.name.includes(this.state.name));
-      this.setState(
-        {
-          filterpotters: potterFilter
-        }
-      )
+        //potters: nameFilter
+      }, ()=> {
+        const potters= [...this.state.potters]
+        const potterFilter= potters.filter(item => item.name.includes(this.state.name));
+        this.setState(
+          {
+            filterpotters: potterFilter
+          }
+        )
         console.log(this.state.potters);
-    })
-  }
+      })
+    }
 
-  render() {
-    console.log(this.state.potters)
+    render() {
+      console.log(this.state.potters)
 
-    const {name, potters, filterpotters}=this.state;
-    return (
-      <div className="App">
-        <h1 className="title">
-        Harry Potter Characters
-        </h1>
-        <Homepage filterPotterByName={this.filterPotterByName}
-                  name={name}
-                  pottersCharacter={potters}
-                  pottersFilterCharacter={filterpotters}
-                />
+      const {name, potters, filterpotters}=this.state;
+      return (
+        <div className="App">
+          <h1 className="title">
+            Harry Potter Characters
+          </h1>
+          <Switch>
+            <Route exact path='/' render={
+              () => <Homepage filterPotterByName={this.filterPotterByName}
+                name={name}
+                pottersCharacter={potters}
+                pottersFilterCharacter={filterpotters}
+              />
+            }
+          />
+          <Route path='/potterCharacter/:id' render={
+            (props) => <CharacterDetail
+              match={props.match}
+              pottersCharacter={this.state.potters}
+            />
+          }
+        />
+      </Switch>
 
-      </div>
-    );
-  }
+    </div>
+  );
+}
 }
 
 export default App;

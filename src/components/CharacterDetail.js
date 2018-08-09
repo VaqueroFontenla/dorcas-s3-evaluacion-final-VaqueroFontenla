@@ -10,9 +10,9 @@ class CharacterDetail extends Component {
   }
 
   render () {
-
+ console.log(this.props);
     return (
-      <div></div>
+      <div>Hola tía</div>
     );
   }
 }
