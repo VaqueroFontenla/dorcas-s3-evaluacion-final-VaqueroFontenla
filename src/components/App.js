@@ -72,13 +72,12 @@ class App extends Component {
         <h1 className="title">
         Harry Potter Characters
         </h1>
-        <HarryFilter filterPotterByName={filterPotterByName}
-                      name={this.state.name}/>
-        <div className="HarryList">
-          <HarryList pottersCharacter={this.state.potters}
-                     pottersFilterCharacter={this.state.filterpotters}
-                     />
-        </div>
+        <Homepage filterPotterByName={filterPotterByName}
+                  name={this.state.name}
+                  pottersCharacter={this.state.potters}
+                  pottersFilterCharacter={this.state.filterpotters}
+                />
+        
       </div>
     );
   }
