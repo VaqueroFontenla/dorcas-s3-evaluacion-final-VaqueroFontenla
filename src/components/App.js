@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import HarryList from './HarryList';
+import { Link, Route, Switch } from 'react-router-dom';
+import Homepage from './Homepage';
 import HarryFilter from './HarryFilter';
-import './App.css';
+import HarryDetail from './HarryDetail';
 
 
 const url = 'http://hp-api.herokuapp.com/api/characters';
@@ -11,6 +12,7 @@ class App extends Component {
     super(props);
     this.state = {
       potters: [],
+      pottersWithoutId: [],
       name: '',
       filterpotters:[],
     }
@@ -21,27 +23,28 @@ class App extends Component {
 
   componentDidMount() {
     fetch(url)
-      .then(response => {
-        return response.json();
-      })
-      .then((json) => {
-        this.setState({
-          potters: json
-        }, this.addId);
-      });
+    .then(response => {
+      return response.json();
+    })
+    .then((json) => {
+      this.setState({
+        pottersWithoutId: json
+      }, this.addId);
+
+    });
   }
 
   addId() {
-    const potters= [...this.state.potters]
-    let pottersConId = [];
-    for (let i = 0; i<potters.length; i++) {
-      pottersConId[i] = {
-        ...potters[i],
+    const pottersWithoutId= [...this.state.pottersWithoutId]
+    let potters = [];
+    for (let i = 0; i<pottersWithoutId.length; i++) {
+      potters[i] = {
+        ...pottersWithoutId[i],
         id : i
       }
     }
     this.setState({
-      potters: pottersConId
+      potters: potters
     });
   }
 
@@ -49,38 +52,46 @@ class App extends Component {
     this.setState(
       {
         name: e.target.value
-      //potters: nameFilter
-    }, ()=> {
-      const potters= [...this.state.potters]
-      const potterFilter= potters.filter(item => item.name.includes(this.state.name));
-      this.setState(
-        {
-          filterpotters: potterFilter
-        }
-      )
-        console.log(this.state.potters);
-    })
-  }
+        //potters: nameFilter
+      }, ()=> {
+        const potters= [...this.state.potters]
+        const potterFilter= potters.filter(item => item.name.includes(this.state.name));
+        this.setState(
+          {
+            filterpotters: potterFilter
+          }
+        )
+      })
+    }
 
-  render() {
-    console.log(this.state.potters)
 
-    const {filterPotterByName}=this;
-    return (
-      <div className="App">
-        <h1 className="title">
-        Harry Potter Characters
-        </h1>
-        <HarryFilter filterPotterByName={filterPotterByName}
-                      name={this.state.name}/>
-        <div className="HarryList">
-          <HarryList pottersCharacter={this.state.potters}
-                     pottersFilterCharacter={this.state.filterpotters}
-                     />
-        </div>
-      </div>
-    );
-  }
+    render() {
+      const {name, potters, filterpotters}=this.state;
+      return (
+        <div className="App">
+          <h1 className="title">
+            Harry Potter Characters
+          </h1>
+          <Switch>
+            <Route exact path='/' render={
+              () => <Homepage filterPotterByName={this.filterPotterByName}
+                name={name}
+                pottersCharacter={potters}
+                pottersFilterCharacter={filterpotters}
+              />
+            }
+          />
+          <Route path='/potterCharacter/:id' render={
+            (props) => <HarryDetail
+              match={props.match}
+              potters={this.state.potters}
+            />
+          }
+        />
+      </Switch>
+    </div>
+  );
+}
 }
 
 export default App;
