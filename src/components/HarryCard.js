@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import './HarryCard.css';
+import { Link } from 'react-router-dom';
+import '../stylesheets/HarryCard.css';
 
 
 class HarryCard extends Component {
@@ -9,8 +10,9 @@ class HarryCard extends Component {
   }
 
   render () {
-    
+
     return (
+      <Link to={'potterCharacter/'+this.props.potterId}>
 
       <ul className="potterCard">
         <li><img src={this.props.potterImage} alt="character image"/></li>
@@ -18,6 +20,7 @@ class HarryCard extends Component {
         <li>{this.props.potterHouse}</li>
 
       </ul>
+    </Link>
     )
   }
 }
