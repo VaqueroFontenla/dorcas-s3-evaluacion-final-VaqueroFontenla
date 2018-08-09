@@ -1,15 +1,23 @@
-.potterCard {
+.potterDetailCard {
   height: 295px;
   width: 600px;
+  background-color: #ff7854;
+  padding: 0;
+  list-style: none;
+  border: 1px solid black;
+  color: white;
   display: flex;
   flex-direction: row;
+  margin-top: 50px;
 
 }
 
 
-.potterCard-img {
+.potterDetailCard-img {
   height: 295px;
   width: 200px;
+  background-position: top left 50%;
+  background-size: cover;
 }
 
 .img {
@@ -17,7 +25,7 @@
   height: 0;
 }
 
-.potterCard-data {
+.potterDetailCard-data {
   height: auto;
   width: auto;
   display: flex;
@@ -26,10 +34,17 @@
   justify-content: space-between;
 }
 
-.potterCard-data-name {
-
+.potterDetailCard-name {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  margin-top: 20px;
 }
 
-.potterCard-data-data {
-
+.potterDetailCard-data-data {
+font-family: 'Roboto', sans-serif;
+text-align: left;
+line-height: 2em;
+padding-left: 20px;
+padding-bottom: 70px;
 }

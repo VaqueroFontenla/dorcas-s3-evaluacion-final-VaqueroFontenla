@@ -74,7 +74,7 @@ class App extends Component {
           <h1 className="title">
             Harry Potter Characters
           </h1>
-          <main>
+          <main className="main">
           <Switch>
             <Route exact path='/' render={
               () => <Homepage filterPotterByName={this.filterPotterByName}

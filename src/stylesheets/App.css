@@ -1,6 +1,7 @@
 .App {
   margin: 0;
   padding: 0;
+  width: 100%;
   box-sizing: border-box;
   text-align: center;
   display: flex;
@@ -12,4 +13,8 @@
   font-family: 'Roboto', sans-serif;
   font-weight: 900;
   font-size: 50px;
+}
+
+.main {
+  width:100%;
 }

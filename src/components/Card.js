@@ -13,11 +13,11 @@ class Card extends Component {
 
     console.log(name);
     return (
-      <ul className="potterCard">
-        <li className="potterCard-img" style={{backgroundImage: "url(" + image + ")"}}><img className="img" src={image} alt="character image"/></li>
-        <li className="potterCard-data">
-          <div className="potterCard-name">{name}</div>
-          <div className="potterCard-data-data">
+      <ul className="potterDetailCard">
+        <li className="potterDetailCard-img" style={{backgroundImage: "url(" + image + ")"}}><img className="img" src={image} alt="character image"/></li>
+        <li className="potterDetailCard-data">
+          <div className="potterDetailCard-name">{name}</div>
+          <div className="potterDetailCard-data-data">
           <div>Casa:  {house}</div>
           <div>Nacimiento:  {dateOfBirth}</div>
           <div>Patronus:  {patronus}</div>

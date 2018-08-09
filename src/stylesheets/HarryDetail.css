@@ -1,0 +1,21 @@
+.back-btn {
+  display: block;
+  border: 5px solid white;
+  background-color: #ff7854;
+  border-radius: 10px;
+  box-shadow: 10px 15px 20px #ff7854;
+  width: 150px;
+  height: 40px;
+  color: white;
+  text-align: center;
+  line-height: 40px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.HarryDetail {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: space-between;
+}

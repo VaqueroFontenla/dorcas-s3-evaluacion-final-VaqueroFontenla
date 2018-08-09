@@ -26,11 +26,11 @@ class HarryDetail extends Component {
     console.log(potterino)
 
     return (
-      <div>
-        <Link to="/" className="back-btn">Volver :)</Link>
+      <div className="HarryDetail">
+        <Link to="/" className="back-btn">Back to home</Link>
         <ul> {
           potterino.map((potterinoino,index)=>
-          <Card potterinoino={potterinoino}/>
+          <Card key={index} potterinoino={potterinoino}/>
         )
       }
     </ul>

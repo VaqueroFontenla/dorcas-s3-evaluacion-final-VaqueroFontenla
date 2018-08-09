@@ -16,12 +16,9 @@ const {filterPotterByName, name, pottersCharacter, pottersFilterCharacter}=this.
       <div className="homepage">
         <HarryFilter filterPotterByName={filterPotterByName}
                       name={name}/>
-        <div className="HarryList">
-          <HarryList pottersCharacter={pottersCharacter}
+        <HarryList pottersCharacter={pottersCharacter}
                      pottersFilterCharacter={pottersFilterCharacter}
                      />
-        </div>
-
       </div>
 
     );
