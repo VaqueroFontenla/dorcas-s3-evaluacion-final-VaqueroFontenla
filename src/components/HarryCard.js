@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './HarryCard.css';
+import '../stylesheets/HarryCard.css';
 
 
 class HarryCard extends Component {
@@ -9,7 +9,7 @@ class HarryCard extends Component {
   }
 
   render () {
-    
+
     return (
 
       <ul className="potterCard">

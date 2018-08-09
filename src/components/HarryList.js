@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import HarryCard from './HarryCard';
-import './HarryList.css';
+import '../stylesheets/HarryList.css';
 
 
 

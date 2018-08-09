@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import { Link, Route, Switch } from 'react-router-dom';
 import HarryList from './HarryList';
 import HarryFilter from './HarryFilter';
-import './App.css';
+import '../stylesheets/App.css';
 
 
 const url = 'http://hp-api.herokuapp.com/api/characters';

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './HarryFilter.css';
+import '../stylesheets/HarryFilter.css';
 
 
 class HarryFilter extends Component {
