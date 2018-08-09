@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link, Route, Switch } from 'react-router-dom';
+import '../stylesheets/App.css';
 import Homepage from './Homepage';
 import HarryFilter from './HarryFilter';
 import HarryDetail from './HarryDetail';
@@ -55,7 +56,7 @@ class App extends Component {
         //potters: nameFilter
       }, ()=> {
         const potters= [...this.state.potters]
-        const potterFilter= potters.filter(item => item.name.includes(this.state.name));
+        const potterFilter= potters.filter(item => { return item.name.toLowerCase().includes(this.state.name.toLowerCase())});
         this.setState(
           {
             filterpotters: potterFilter
@@ -72,6 +73,7 @@ class App extends Component {
           <h1 className="title">
             Harry Potter Characters
           </h1>
+          <main>
           <Switch>
             <Route exact path='/' render={
               () => <Homepage filterPotterByName={this.filterPotterByName}
@@ -89,6 +91,7 @@ class App extends Component {
           }
         />
       </Switch>
+      </main>
     </div>
   );
 }

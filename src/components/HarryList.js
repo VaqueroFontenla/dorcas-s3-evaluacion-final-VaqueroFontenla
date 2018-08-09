@@ -23,7 +23,7 @@ class HarryList extends Component {
     }
 
     return (
-      <ul className="potterList">
+      <ul className="PotterList">
         {
           filterOrNot.map((filterOrNot, index) =>
             <HarryCard key={index} potterName={filterOrNot.name}
