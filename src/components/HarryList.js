@@ -27,8 +27,9 @@ class HarryList extends Component {
         {
           filterOrNot.map((filterOrNot, index) =>
             <HarryCard key={index} potterName={filterOrNot.name}
-                                  potterHouse={filterOrNot.house}
-                                  potterImage={filterOrNot.image}
+                                   potterHouse={filterOrNot.house}
+                                   potterImage={filterOrNot.image}
+                                   potterId={filterOrNot.id}
                                 />
           )
         }
