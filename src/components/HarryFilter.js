@@ -11,12 +11,18 @@ class HarryFilter extends Component {
 
   render () {
 
-    const {filterPotterByName}=this.props;
+    const {filterPotterByName, filterByLive}=this.props;
 
     return (
       <div className="search">
         {/* <label fhtmlFor="inputPotters">Search your "Potter"</label> */}
         <input className="search-input" type="text" name="inputPotters" value={this.props.name} onChange={filterPotterByName}/>
+        <label>Vivo</label>
+        <input type="radio" value="Vivo" name="check" onClick={filterByLive}/>
+        <label>Muerto</label>
+        <input type="radio" value="Muerto" name="check" onClick={filterByLive}/>
+        <label>Todos</label>
+        <input type="radio" value="Todos"  name="check" onClick={filterByLive}/>
       </div>
     )
   }

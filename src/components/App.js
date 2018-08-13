@@ -20,6 +20,7 @@ class App extends Component {
     }
 
     this.filterPotterByName=this.filterPotterByName.bind(this);
+    this.filterByLive=this.filterByLive.bind(this);
   }
 
 
@@ -67,6 +68,20 @@ class App extends Component {
     }
 
 
+   filterByLive (e){
+     const input = e.target.value;
+
+     if (input === "Vivo") {
+       console.log(this.state.potters);
+        console.log('hola');
+     } else if (input === "Muerto") {
+         console.log('adiós');
+     } else {
+       console.log('todos');
+     }
+
+   }
+
     render() {
       const {name, potters, filterpotters}=this.state;
       return (
@@ -81,6 +96,7 @@ class App extends Component {
                 name={name}
                 pottersCharacter={potters}
                 pottersFilterCharacter={filterpotters}
+                filterByLive={this.filterByLive}
               />
             }
           />
